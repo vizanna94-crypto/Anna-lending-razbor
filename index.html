@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AnnaStory — персональный разбор по фото: глаза или ладонь. Цены от 90 ₽.">
+<title>AnnaStory — разбор по глазам и ладони</title>
+<style>
+:root{
+  --bg:#0e0b1a;--bg2:#161029;--card:#1c1533;
+  --accent:#c9a86a;--accent2:#e8d5a8;
+  --text:#ece7f5;--muted:#a99fc4;
+  --border:rgba(201,168,106,.25);
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.55;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.7;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,255,255,.7) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 19% 71%,rgba(255,255,255,.45) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 31% 24%,rgba(255,255,255,.55) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 43% 83%,rgba(255,255,255,.4) 0 1.2px,transparent 1.7px),
+    radial-gradient(circle at 55% 14%,rgba(255,255,255,.65) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 68% 48%,rgba(255,255,255,.5) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 77% 17%,rgba(255,255,255,.7) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 88% 72%,rgba(255,255,255,.45) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 94% 28%,rgba(255,255,255,.55) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 12% 43%,rgba(255,255,255,.4) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 60% 91%,rgba(255,255,255,.55) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 83% 54%,rgba(255,255,255,.45) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 37% 55%,rgba(255,255,255,.5) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 72% 88%,rgba(255,255,255,.6) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 4% 90%,rgba(255,255,255,.4) 0 1px,transparent 1.6px);
+  animation:twinkle 5s ease-in-out infinite alternate;
+}
+@keyframes twinkle{from{opacity:.45}to{opacity:.9}}
+a{color:inherit;text-decoration:none}
+section,.hero,footer{position:relative;z-index:1}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+section{padding:90px 0}
+h1,h2,h3,p{margin-top:0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+.section-head h2{font-size:clamp(30px,5vw,48px);margin-bottom:10px}
+.section-head p{color:var(--muted);font-size:17px}
+.hero{
+  min-height:720px;display:flex;align-items:center;
+  background:
+    radial-gradient(circle at 70% 40%,rgba(201,168,106,.14),transparent 35%),
+    radial-gradient(circle at 20% 20%,rgba(100,70,170,.14),transparent 35%);
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  left:50%;top:35%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(201,168,106,.13),transparent 68%);
+  animation:heroGlow 5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes heroGlow{50%{transform:translate(-50%,-50%) scale(1.12);opacity:.65}}
+.hero-inner{position:relative;max-width:900px}
+.badge{
+  display:inline-flex;padding:8px 14px;border:1px solid var(--border);
+  border-radius:999px;color:var(--accent2);background:rgba(28,21,51,.7);
+  font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+}
+h1{font-size:clamp(43px,7vw,76px);line-height:1.03;max-width:850px;margin:22px 0 22px;letter-spacing:-.04em}
+.gradient-text{
+  background:linear-gradient(90deg,var(--accent),var(--accent2),#b99050,var(--accent2),var(--accent));
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:goldFlow 5s linear infinite;
+}
+@keyframes goldFlow{to{background-position:300% 0}}
+.hero p{max-width:720px;color:var(--muted);font-size:18px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 22px;border-radius:14px;border:1px solid var(--border);
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#171025;
+  font-weight:800;transition:.3s;overflow:visible;cursor:pointer;
+}
+.btn::before{
+  content:"";position:absolute;inset:-5px;border-radius:17px;
+  background:inherit;filter:blur(18px);opacity:.35;z-index:-1;animation:btnGlow 3s ease-in-out infinite;
+}
+@keyframes btnGlow{50%{opacity:.65;transform:scale(1.04)}}
+.btn:hover{transform:translateY(-3px)}
+.btn.secondary{background:rgba(28,21,51,.8);color:var(--text)}
+.telegram{width:19px;height:19px}
+.fade-up{animation:fadeUp .9s both}
+.delay{animation-delay:.2s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.blink-eye{position:absolute;top:30px;right:20px;width:120px;height:80px;opacity:.85}
+.blink-eye .eyelid-top,.blink-eye .eyelid-bottom{transform-origin:center;animation:blinkMove 5s ease-in-out infinite}
+@keyframes blinkMove{0%,90%,100%{transform:scaleY(1)}94%,96%{transform:scaleY:.05}}
+
+.cards-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative}
+.format-card{
+  background:var(--card);border:1px solid var(--border);border-radius:24px;padding:30px;
+  min-height:350px;transition:.35s;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.format-card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 20px 70px rgba(201,168,106,.12)}
+.format-card .tag{color:var(--accent2);font-size:14px;font-weight:700}
+.format-card h3{font-size:29px;margin:18px 0 8px}
+.format-card p{color:var(--muted)}
+.price{font-size:25px;color:var(--accent2);font-weight:800;margin-top:18px}
+.visual{height:135px;display:flex;align-items:center;justify-content:center}
+.connector{
+  position:absolute;left:50%;top:35px;bottom:35px;width:2px;
+  background:linear-gradient(transparent,var(--accent),transparent);opacity:.5
+}
+.connector::after{
+  content:"";position:absolute;left:50%;width:8px;height:8px;border-radius:50%;
+  background:var(--accent2);box-shadow:0 0 16px var(--accent);transform:translateX(-50%);
+  animation:connectorMove 3s ease-in-out infinite;
+}
+@keyframes connectorMove{0%{top:0}50%{top:calc(100% - 8px)}100%{top:0}}
+.complex{text-align:center;margin-top:30px;padding:24px;border:1px solid var(--border);border-radius:20px;background:rgba(28,21,51,.6)}
+.complex p{margin:0 0 15px;color:var(--muted)}
+
+.flip-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.flip-card{height:260px;perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .8s;transform-style:preserve-3d}
+.flip-card:hover .flip-inner,.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{
+  position:absolute;inset:0;border-radius:20px;border:1px solid var(--border);
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(0);
+  overflow:hidden;
+}
+.flip-front{background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px}
+.flip-front .emoji{font-size:46px;margin-bottom:12px}
+.flip-front strong{font-size:18px}.hint{font-size:11px;text-transform:uppercase;opacity:.6;margin-top:18px}
+.flip-back{
+  transform:rotateY(180deg);background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#1a1330;padding:22px;display:flex;align-items:center;
+}
+.fb-content{position:relative;z-index:1}.fb-content h3{font-size:17px;margin-bottom:7px}.fb-content p{font-size:13.5px;line-height:1.5}
+.flip-back .bg-emoji{position:absolute;right:-30px;bottom:-30px;font-size:130px;opacity:.12;filter:blur(1px);z-index:0;pointer-events:none}
+
+.chat-wrap{max-width:820px;margin:auto;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:25px;box-shadow:var(--shadow)}
+.chat{display:flex;gap:16px;align-items:flex-start}
+.avatar{width:44px;height:44px;min-width:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#1a1330;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.message{background:#241b3d;border:1px solid rgba(255,255,255,.06);padding:17px 19px;border-radius:18px;white-space:pre-wrap;font-size:14px;color:#eee7f6;min-height:100px}
+.cursor{animation:blink .9s step-end infinite;color:var(--accent2)}
+@keyframes blink{50%{opacity:0}}
+
+.sound-toggle{
+  position:fixed;bottom:20px;left:20px;width:46px;height:46px;border-radius:50%;
+  background:var(--card);border:1px solid var(--border);color:var(--text);z-index:20;cursor:pointer;font-size:18px
+}
+.sound-toggle.active{border-color:var(--accent);box-shadow:0 0 22px rgba(201,168,106,.25)}
+
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card-pkg{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:28px;transition:.3s}
+.card-pkg:hover{transform:translateY(-5px);border-color:var(--accent)}
+.card-pkg::before{
+ content:"";position:absolute;width:320px;height:320px;border-radius:50%;
+ background:radial-gradient(circle,rgba(201,168,106,.28),transparent 70%);
+ opacity:0;transition:opacity .3s;pointer-events:none;transform:translate(-50%,-50%);
+ left:var(--mx,50%);top:var(--my,50%)
+}
+.card-pkg:hover::before{opacity:1}
+.card-pkg>*{position:relative;z-index:1}
+.pkg-tag{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(201,168,106,.13);color:var(--accent2);font-size:12px;margin-bottom:12px}
+.card-pkg h3{font-size:21px;margin-bottom:6px}.card-pkg .pkg-price{font-size:27px;color:var(--accent2);font-weight:800}.card-pkg p{color:var(--muted);font-size:14px}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:25px}
+.step-num{color:var(--accent);font-weight:900;font-size:13px;letter-spacing:.1em}.step h3{margin:8px 0;font-size:19px}.step p{color:var(--muted);font-size:14px}
+
+.help{text-align:center;background:linear-gradient(180deg,transparent,rgba(201,168,106,.05),transparent)}
+.help .emoji{font-size:45px}.help h2{font-size:clamp(30px,5vw,45px)}.help p{color:var(--muted);max-width:650px;margin:0 auto 25px}
+
+.faq{max-width:820px;margin:auto}.faq details{background:var(--card);border:1px solid var(--border);border-radius:16px;margin-bottom:10px;padding:18px 20px}.faq summary{cursor:pointer;font-weight:700}.faq details p{color:var(--muted);margin:14px 0 0;font-size:14px}.faq a{text-decoration:underline;color:var(--accent2)}
+
+.final{text-align:center;padding:110px 0}.final h2{font-size:clamp(34px,6vw,58px);max-width:800px;margin:0 auto 28px}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:35px 0;color:var(--muted);font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--accent2)}
+.disclaimer{max-width:700px;margin-top:15px}
+.mobile-cta{display:none}
+
+@media(max-width:900px){
+ .flip-grid{grid-template-columns:repeat(2,1fr)}
+ .packages{grid-template-columns:1fr}
+ .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+ section{padding:65px 0}.hero{min-height:650px}.container{width:min(100% - 24px,1120px)}
+ .hero h1{font-size:43px;padding-right:35px}
+ .hero p{font-size:16px}.blink-eye{width:70px;height:46px;top:15px;right:10px;opacity:.7}
+ .cards-2{grid-template-columns:1fr;gap:18px}.connector{display:none}
+ .format-card{min-height:310px}
+ .flip-grid{grid-template-columns:1fr 1fr;gap:12px}.flip-card{height:245px}
+ .chat-wrap{padding:15px}.message{font-size:13px}
+ .steps{grid-template-columns:1fr}
+ .footer-inner{display:block}.mobile-cta{
+  display:flex;position:fixed;right:15px;bottom:18px;z-index:19;padding:12px 17px;border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#171025;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.35)
+ }
+}
+@media(max-width:390px){.flip-grid{grid-template-columns:1fr}.flip-card{height:220px}.cta-row .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <span class="badge fade-up">Персональный разбор по фото</span>
+    <h1 class="fade-up delay">Узнай себя через <span class="gradient-text">глаза и ладонь</span></h1>
+    <p class="fade-up delay">Разбор по радужке глаз или линиям ладони. Плюс бонус — ответ на 1 личный вопрос, который тебя волнует. Цены — от 90 ₽.</p>
+    <div class="cta-row fade-up delay">
+      <a class="btn" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">
+        <svg class="telegram" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.4 3.2 18 20.4c-.25 1.22-.9 1.52-1.82.95l-5-3.68-2.41 2.32c-.27.27-.5.5-1.03.5l.36-5.1 9.28-8.38c.4-.36-.09-.56-.62-.2L5.29 14.12.34 12.57c-1.08-.34-1.1-1.08.23-1.57L19.9 3.4c.91-.34 1.7.2 1.5-.2Z" fill="currentColor"/></svg>
+        Открыть бота в Telegram
+      </a>
+    </div>
+  </div>
+  <svg class="blink-eye" viewBox="0 0 120 80" aria-hidden="true">
+    <path d="M7 40 Q60 4 113 40 Q60 76 7 40Z" fill="none" stroke="#e8d5a8" stroke-width="3"/>
+    <circle cx="60" cy="40" r="22" fill="#0e7490" opacity=".7"/>
+    <circle cx="60" cy="40" r="10" fill="#22d3ee"/>
+    <circle cx="67" cy="33" r="4" fill="white"/>
+    <ellipse class="eyelid-top" cx="60" cy="12" rx="58" ry="25" fill="#0e0b1a"/>
+    <ellipse class="eyelid-bottom" cx="60" cy="68" rx="58" ry="25" fill="#0e0b1a"/>
+  </svg>
+</header>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>Два формата — один разбор</h2><p>Выбери, что тебе ближе — или возьми оба.</p></div>
+  <div class="cards-2">
+    <div class="connector"></div>
+    <a class="format-card" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">
+      <div class="tag">👁 Глаза</div>
+      <div class="visual">
+        <svg width="190" height="120" viewBox="0 0 190 120" aria-hidden="true">
+          <ellipse cx="95" cy="60" rx="75" ry="45" fill="none" stroke="#e8d5a8" stroke-width="2"/>
+          <circle cx="95" cy="60" r="31" fill="none" stroke="#22d3ee" opacity=".55">
+            <animate attributeName="r" values="26;34;26" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".8;.2;.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="95" cy="60" r="13" fill="#22d3ee"/>
+          <circle cx="99" cy="55" r="4" fill="white"/>
+          <circle cx="95" cy="60" r="45" fill="none" stroke="#c9a86a" stroke-dasharray="3 9" opacity=".7">
+            <animateTransform attributeName="transform" type="rotate" from="0 95 60" to="360 95 60" dur="5s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+      <h3>Разбор по глазам</h3><p>Энергетика, характер, скрытый потенциал</p><div class="price">90 ₽</div>
+    </a>
+    <a class="format-card" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">
+      <div class="tag">🤚 Ладонь</div>
+      <div class="visual">
+        <svg width="170" height="130" viewBox="0 0 170 150" aria-hidden="true">
+          <path d="M52 128 C43 108 39 86 42 64 L45 25 C46 17 55 16 58 24 L59 65 L63 14 C64 6 74 7 75 15 L76 62 L80 10 C81 2 91 4 91 12 L91 62 L96 17 C97 9 107 10 107 18 L104 70 C120 58 130 63 128 74 L119 103 C114 121 99 132 80 136 C67 138 58 135 52 128Z" fill="none" stroke="#e8d5a8" stroke-width="3"/>
+          <path class="line-pulse red" d="M48 73 C67 58 84 64 101 75 C111 81 118 82 123 77" fill="none" stroke="#ef4444" stroke-width="2"/>
+          <path class="line-pulse purple" d="M79 128 C79 108 82 90 90 76 C95 67 99 57 101 43" fill="none" stroke="#e879f9" stroke-width="2"/>
+          <path class="line-pulse green" d="M51 91 C61 88 69 93 75 101 C81 110 87 119 97 125" fill="none" stroke="#22c55e" stroke-width="2"/>
+        </svg>
+      </div>
+      <h3>Разбор по ладони</h3><p>Хиромантия, линии жизни, таланты</p><div class="price">90 ₽</div>
+    </a>
+  </div>
+  <div class="complex"><p>Или возьми полный комплекс — глаза + ладонь, максимум информации</p><a class="btn" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">✈️ Комплекс за 140 ₽</a></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>Что можно узнать</h2><p>Нажми на карточку — узнаешь, что читается по этой теме.</p></div>
+  <div class="flip-grid">
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><div class="emoji">💗</div><strong>Любовь</strong><div class="hint">нажми ↻</div></div><div class="flip-back"><div class="fb-content"><h3>Любовь</h3><p>Искренность, верность, глубина чувств. Как ты проявляешься в близких связях и что важно для тебя.</p></div><div class="bg-emoji">💗</div></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><div class="emoji">💼</div><strong>Карьера</strong><div class="hint">нажми ↻</div></div><div class="flip-back"><div class="fb-content"><h3>Карьера</h3><p>Сильные стороны, призвание, к чему лежит душа. Где ты раскроешься и что принесёт результат.</p></div><div class="bg-emoji">💼</div></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><div class="emoji">💰</div><strong>Деньги</strong><div class="hint">нажми ↻</div></div><div class="flip-back"><div class="fb-content"><h3>Деньги</h3><p>Отношение к финансам, денежные потоки, что помогает и что мешает притягивать доход.</p></div><div class="bg-emoji">💰</div></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><div class="emoji">🧠</div><strong>Ум</strong><div class="hint">нажми ↻</div></div><div class="flip-back"><div class="fb-content"><h3>Ум</h3><p>Как ты принимаешь решения, анализируешь, реагируешь в стрессе. Логика и интуиция в балансе.</p></div><div class="bg-emoji">🧠</div></div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><div class="emoji">🌿</div><strong>Жизнь</strong><div class="hint">нажми ↻</div></div><div class="flip-back"><div class="fb-content"><h3>Жизнь</h3><p>Энергия, ресурс, что тебя заряжает и что забирает силы. Как восстанавливаться в нужный момент.</p></div><div class="bg-emoji">🌿</div></div></div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>Как выглядит разбор</h2><p>Живой пример — текст печатается как в реальном чате.</p></div>
+  <div class="chat-wrap" id="typingBlock">
+    <div class="chat"><div class="avatar">A</div><div class="message"><span id="typed"></span><span class="cursor">▌</span></div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>Форматы разбора</h2><p>К любому разбору — бонус: ответ на 1 личный вопрос.</p></div>
+  <div class="packages">
+    <a class="card-pkg" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener"><span class="pkg-tag">👁 Разбор по глазам</span><h3>Глаза</h3><div class="pkg-price">90 ₽</div><p>Врождённые черты характера, внутренние противоречия, жизненные тенденции, бонус: 1 личный вопрос.</p></a>
+    <a class="card-pkg" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener"><span class="pkg-tag">🤚 Разбор по ладони</span><h3>Ладонь</h3><div class="pkg-price">90 ₽</div><p>Линия жизни, судьбы, сердца, таланты, жизненные тенденции, бонус: 1 личный вопрос.</p></a>
+    <a class="card-pkg" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener"><span class="pkg-tag">✨ Выгодно</span><h3>Полный комплекс</h3><div class="pkg-price">140 ₽</div><p>Разбор по фото глаз, разбор по фото ладони, синтез двух систем, бонус: 1 личный вопрос.</p></a>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>Как это работает</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h3>Открой бота</h3><p>Нажми «Открыть бота» — Telegram откроет чат.</p></div>
+    <div class="step"><div class="step-num">02</div><h3>Выбери формат</h3><p>Глаза / ладонь / комплекс — кнопкой в боте.</p></div>
+    <div class="step"><div class="step-num">03</div><h3>Пришли фото и вопрос</h3><p>Фото глаз или ладони + 1 личный вопрос.</p></div>
+    <div class="step"><div class="step-num">04</div><h3>Оплати и получи разбор</h3><p>Бот пришлёт реквизиты. Разбор — в течение дня.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="help">
+<div class="container">
+  <div class="emoji">💬</div><h2>Что-то осталось непонятным?</h2>
+  <p>Если после разбора что-то показалось неполным или непонятным — просто напиши об этом, и я уточню или разберу тот же вопрос ещё раз бесплатно.</p>
+  <a class="btn" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">Открыть бота</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>FAQ</h2></div>
+  <div class="faq">
+    <details><summary>Это гадание?</summary><p>Нет. Разбор — личная интерпретация по фото, развлекательно-консультационный формат. Не заменяет психологическую, медицинскую, юридическую или финансовую консультацию.</p></details>
+    <details><summary>Какие фото нужны?</summary><p>Для глаз — чёткое фото глаза. Для ладони — чёткое фото раскрытой ладони при хорошем освещении.</p></details>
+    <details><summary>Как проходит оплата?</summary><p>После отправки фото и вопроса бот пришлёт реквизиты. Разбор — в течение дня после оплаты.</p></details>
+    <details><summary>Можно ли вернуть деньги?</summary><p>Возврат за выполненную работу не производится. Но если что-то непонятно — уточню бесплатно.</p></details>
+    <details><summary>Конфиденциально ли это?</summary><p>Да. Фото и переписка не передаются третьим лицам.</p></details>
+    <details><summary>А если нет @username в Telegram?</summary><p>Не проблема. Разбор придёт прямо в бот.</p></details>
+    <details><summary>Есть ли вы в других соцсетях?</summary><p>Да, страница во ВКонтакте: <a href="https://vk.ru/annarazbor" target="_blank" rel="noopener">vk.ru/annarazbor</a></p></details>
+  </div>
+</div>
+</section>
+
+<section class="final">
+<div class="container"><h2>Готова узнать, что говорят твои глаза и ладони?</h2><a class="btn" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">Открыть бота</a></div>
+</section>
+
+<footer>
+<div class="container footer-inner">
+  <div>© AnnaStory · разбор по глазам и ладони</div>
+  <div><a href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">@VoprosAV_bot</a> · <a href="https://vk.ru/annarazbor" target="_blank" rel="noopener">ВКонтакте</a></div>
+  <div class="disclaimer">Разбор — это личная интерпретация по фото, развлекательно-консультационный формат. Не заменяет профессиональную психологическую, медицинскую, юридическую или финансовую консультацию.</div>
+</div>
+</footer>
+
+<button class="sound-toggle" id="soundToggle" aria-label="Включить звук">🔇</button>
+<a class="mobile-cta" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">✈️ Разбор</a>
+
+<script>
+let audioCtx=null,soundEnabled=false;
+function clickSound(){
+  if(!soundEnabled)return;
+  if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+  osc.type='square';osc.frequency.value=800+Math.random()*400;
+  gain.gain.setValueAtTime(.025,audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.04);
+  osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.04);
+}
+document.getElementById('soundToggle').addEventListener('click',()=>{
+  soundEnabled=!soundEnabled;
+  if(soundEnabled && audioCtx) audioCtx.resume();
+  document.getElementById('soundToggle').textContent=soundEnabled?'🔊':'🔇';
+  document.getElementById('soundToggle').classList.toggle('active',soundEnabled);
+});
+
+document.querySelectorAll('.flip-card').forEach(card=>{
+  card.addEventListener('click',()=>card.classList.toggle('flipped'));
+});
+
+document.querySelectorAll('.card-pkg').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=((e.clientX-rect.left)/rect.width)*100;
+    const y=((e.clientY-rect.top)/rect.height)*100;
+    card.style.setProperty('--mx',x+'%');card.style.setProperty('--my',y+'%');
+  });
+});
+
+const sample=`1. Чтение по взгляду (энергетика и характер):
+
+Внимательность и глубокий анализ: взгляд прямой, открытый, сфокусированный. Вы человек, который сначала наблюдает и анализирует, а потом принимает решения.
+
+Эмоциональная чуткость: у вас развита эмпатия — вы хорошо чувствуете настроение окружающих, но иногда склонны копить эмоции в себе, не показывая уязвимость.
+
+Ближайший период: сейчас чувствуется состояние ожидания или внутренней трансформации — вы ищете верное направление или ответ на важный личный вопрос.
+
+2. Анализ ладони (хиромантия):
+
+Линия Сердца: идёт ровно, мягко огибая холмы. Это говорит об искренности и верности в чувствах. Вам важна честность и глубина — поверхностное общение быстро надоедает.
+
+Линия Ума: чёткая, показывает рациональный склад ума. Вы умеете здраво оценивать ситуацию даже в стрессе, хотя внутри можете переживать.
+
+Линия Жизни и энергетика: поток энергии ровный, но сейчас важно не перегружать себя чужими проблемами и давать время на отдых.
+
+✨ Предсказание на ближайшее будущее:
+
+В ближайший месяц вас ждёт прояснение ситуации, которая вызывала сомнения. Возможен неожиданный приятный разговор или новость, которая даст чувство уверенности и облегчения...`;
+
+let started=false;
+const block=document.getElementById('typingBlock'),typed=document.getElementById('typed');
+function startTyping(){
+ if(started)return;started=true;
+ let i=0;
+ function type(){
+   if(i<sample.length){
+     typed.textContent+=sample[i];
+     i++;
+     if(i%3===0)clickSound();
+     if(i%40===0){
+       const r=block.getBoundingClientRect();
+       if(r.bottom>window.innerHeight) window.scrollBy({top:80,behavior:'smooth'});
+     }
+     setTimeout(type,18);
+   }
+ }
+ type();
+}
+new IntersectionObserver(entries=>{if(entries[0].isIntersecting)startTyping()},{threshold:.3}).observe(block);
+</script>
+</body>
+</html>
