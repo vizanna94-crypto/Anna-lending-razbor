@@ -226,7 +226,7 @@ footer a{color:var(--accent2)}
   <div class="container hero-inner">
     <span class="badge fade-up">Персональный разбор по фото</span>
     <h1 class="fade-up delay">Узнай себя через <span class="gradient-text">глаза и ладонь</span></h1>
-    <p class="fade-up delay">Разбор по радужке глаз или линиям ладони. Плюс бонус — ответ на 1 личный вопрос, который тебя волнует. Цены — от 90 ₽.</p>
+    <p class="fade-up delay">Разбор по глазам или линиям ладони. Плюс бонус — ответ на 1 личный вопрос, который тебя волнует. Цены — от 90 ₽.</p>
     <div class="cta-row fade-up delay">
       <a class="btn" href="https://t.me/VoprosAV_bot" target="_blank" rel="noopener">
         <svg class="telegram" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.4 3.2 18 20.4c-.25 1.22-.9 1.52-1.82.95l-5-3.68-2.41 2.32c-.27.27-.5.5-1.03.5l.36-5.1 9.28-8.38c.4-.36-.09-.56-.62-.2L5.29 14.12.34 12.57c-1.08-.34-1.1-1.08.23-1.57L19.9 3.4c.91-.34 1.7.2 1.5-.2Z" fill="currentColor"/></svg>
@@ -305,7 +305,54 @@ footer a{color:var(--accent2)}
   </div>
 </div>
 </section>
+<!-- ЗАЯВКА -->
+<section class="order-section" id="order">
+  <div class="container" style="max-width: 640px;">
+    <h2>Оставить заявку</h2>
+    <p class="subtitle">Заполни форму — я свяжусь с тобой в течение дня</p>
 
+    <form
+      action="https://formspree.io/f/xppwnkdb"
+      method="POST"
+      class="order-form"
+    >
+      <input type="hidden" name="_subject" value="Новая заявка с лендинга AnnaStory">
+
+      <div class="form-field">
+        <label for="name">Как тебя зовут</label>
+        <input type="text" id="name" name="name" placeholder="Имя или ник" required>
+      </div>
+
+      <div class="form-field">
+        <label for="contact">Email или Telegram</label>
+        <input type="text" id="contact" name="contact" placeholder="куда тебе ответить" required>
+      </div>
+
+      <div class="form-field">
+        <label for="format">Что интересует</label>
+        <select id="format" name="format" required>
+          <option value="">— выбери формат —</option>
+          <option value="Глаза — 90 ₽">Разбор по глазам — 90 ₽</option>
+          <option value="Ладонь — 90 ₽">Разбор по ладони — 90 ₽</option>
+          <option value="Комплекс — 140 ₽">Полный комплекс — 140 ₽</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="question">Твой главный вопрос</label>
+        <textarea id="question" name="question" rows="4" placeholder="Что тебя волнует? Можно коротко." required></textarea>
+      </div>
+
+      <button type="submit" class="cta order-btn">
+        Отправить заявку
+      </button>
+
+      <p class="form-note">
+        Нажимая кнопку, ты соглашаешься на обработку данных.
+        Фото и переписка не передаются третьим лицам.
+      </p>
+    </form>
+  </div>
 <section>
 <div class="container">
   <div class="section-head"><h2>Форматы разбора</h2><p>К любому разбору — бонус: ответ на 1 личный вопрос.</p></div>
